@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { createMuiTheme, StylesProvider, ThemeProvider } from '@material-ui/core/styles';
@@ -27,13 +27,13 @@ const App = () => (
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <MainLayout>
-            <Switch>
-              <Route exact path='/' component={Homepage} />
-              <Route exact path='/post/add' component={PostAdd} />
-              <Route exact path='/post/:id' component={Post} />
-              <Route exact path='/post/:id/edit' component={PostEdit} />
-              <Route path='*' component={NotFound} />
-            </Switch>
+
+            <Route exact path='/' component={Homepage} />
+            <Route exact path='/post/add' component={PostAdd} />
+            <Route exact path='/post/:id' component={Post} />
+            <Route exact path='/post/:id/edit' component={PostEdit} />
+            <Route path='*' component={NotFound} />
+
           </MainLayout>
         </ThemeProvider>
       </StylesProvider>
